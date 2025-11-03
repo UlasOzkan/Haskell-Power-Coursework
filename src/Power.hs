@@ -30,14 +30,14 @@ power2 n k
 
    | k == 0 = 1
    | even k = power2 (n * n) (k `div` 2)
-   | otherwise = n * power2 n (k - 1)
+   | odd k = n * power2 n (k - 1)
 
 
 
 -- Task 4 -------------------------
 
 comparePower1 :: Integer -> Integer -> Bool
-comparePower1 n k = power (fromIntegral n) (fromIntegral k) == power1 n k
+comparePower1 n k = power n k == power1 n k
 
 comparePower2 :: Integer -> Integer -> Bool
 comparePower2 n k = power n k == power2 n k
